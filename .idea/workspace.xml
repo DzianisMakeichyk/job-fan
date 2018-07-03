@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="af4dbb8f-68ad-47be-b537-ffccb3b9e509" name="Default" comment="" />
+    <list default="true" id="af4dbb8f-68ad-47be-b537-ffccb3b9e509" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/GoogleMaps/style.scss" afterPath="$PROJECT_DIR$/src/components/GoogleMaps/style.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yarn.lock" afterPath="$PROJECT_DIR$/yarn.lock" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,8 +20,20 @@
         <entry file="file://$PROJECT_DIR$/src/components/GoogleMaps/index.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
-              <caret line="2" column="16" lean-forward="true" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+              <caret line="2" column="10" lean-forward="false" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="19" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="74" lean-forward="false" selection-start-line="9" selection-start-column="74" selection-end-line="9" selection-end-column="74" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -24,9 +41,11 @@
       <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="240">
+              <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+              <folding>
+                <marker date="1530647853656" expanded="true" signature="83:325" ph="{&quot;google-map-react&quot;: &quot;^1.0.5&quot;...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -34,14 +53,25 @@
       <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/GoogleMaps/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="15" lean-forward="false" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+            <state relative-caret-position="60">
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>scss</find>
+    </findStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -51,6 +81,8 @@
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/components/GoogleMaps/index.jsx" />
+        <option value="$PROJECT_DIR$/src/components/GoogleMaps/style.scss" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -79,6 +111,7 @@
     <option name="width" value="1291" />
     <option name="height" value="832" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -160,16 +193,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1530644103893</updated>
-      <workItem from="1530644105107" duration="777000" />
+      <workItem from="1530644105107" duration="1845000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="777000" />
+    <option name="totallyTimeSpent" value="1845000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1029" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32928064" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -177,10 +209,10 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29383314" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29383314" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -218,18 +250,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
+    <entry file="file://$PROJECT_DIR$/src/components/GoogleMaps/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="35" lean-forward="false" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/GoogleMaps/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="15" lean-forward="false" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -237,16 +261,100 @@
     <entry file="file://$PROJECT_DIR$/src/components/GoogleMaps/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="2" column="16" lean-forward="true" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+          <caret line="2" column="10" lean-forward="false" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="19" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/GoogleMaps/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="74" lean-forward="false" selection-start-line="9" selection-start-column="74" selection-end-line="9" selection-end-column="74" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding>
+              <marker date="1530644058286" expanded="true" signature="13357:13385" ph="{...}" />
+              <marker date="1530644058286" expanded="true" signature="14778:15054" ph="{&quot;version&quot;: &quot;0.2.0&quot;...}" />
+              <marker date="1530644058286" expanded="true" signature="14822:15052" ph="[...]" />
+              <marker date="1530644058286" expanded="true" signature="14823:15051" ph="{&quot;name&quot;: &quot;Chrome&quot;...}" />
+              <marker date="1530644058286" expanded="true" signature="14999:15047" ph="{&quot;webpack:///src/*&quot;: &quot;${webRoot}/*&quot;...}" />
+              <marker date="1530644058286" expanded="true" signature="20417:20482" ph="..." />
+              <marker date="1530644058286" expanded="true" signature="20561:20616" ph="{...}" />
+              <marker date="1530644058286" expanded="true" signature="20574:20614" ph="{...}" />
+              <marker date="1530644058286" expanded="true" signature="22478:22775" ph="{...}" />
+              <marker date="1530644058286" expanded="true" signature="22502:22652" ph="{...}" />
+              <marker date="1530644058286" expanded="true" signature="22557:22589" ph="{...}" />
+              <marker date="1530644058286" expanded="true" signature="22611:22646" ph="{...}" />
+              <marker date="1530644058286" expanded="true" signature="22666:22773" ph="{...}" />
+              <marker date="1530644058286" expanded="true" signature="22687:22762" ph="&lt;div/&gt;" />
+              <marker date="1530644058286" expanded="true" signature="23823:23843" ph="{...}" />
+              <marker date="1530644058286" expanded="true" signature="23879:23936" ph="..." />
+              <marker date="1530644058286" expanded="true" signature="24018:24123" ph="{...}" />
+              <marker date="1530644058286" expanded="true" signature="24031:24121" ph="{...}" />
+              <marker date="1530644058286" expanded="true" signature="25202:25268" ph="{...}" />
+              <marker date="1530644058286" expanded="true" signature="25301:25588" ph="{...}" />
+              <marker date="1530644058286" expanded="true" signature="43162:43309" ph="..." />
+              <marker date="1530644058286" expanded="true" signature="43249:43302" ph="..." />
+              <marker date="1530644058286" expanded="true" signature="43759:43785" ph="{...}" />
+              <marker date="1530644058286" expanded="true" signature="55227:55340" ph="{...}" />
+              <marker date="1530644058286" expanded="true" signature="55249:55329" ph="{...}" />
+              <marker date="1530644058286" expanded="true" signature="55263:55325" ph="{...}" />
+              <marker date="1530644058286" expanded="true" signature="55683:56283" ph="{...}" />
+              <marker date="1530644058286" expanded="true" signature="55705:56272" ph="{...}" />
+              <marker date="1530644058286" expanded="true" signature="55765:55829" ph="{...}" />
+              <marker date="1530644058286" expanded="true" signature="55889:56015" ph="{...}" />
+              <marker date="1530644058286" expanded="true" signature="55958:55996" ph="{...}" />
+              <marker date="1530644058286" expanded="true" signature="56097:56144" ph="{...}" />
+              <marker date="1530644058286" expanded="true" signature="56222:56268" ph="{...}" />
+              <marker date="1530644058286" expanded="true" signature="60643:60739" ph="&lt;html/&gt;" />
+              <marker date="1530644058286" expanded="true" signature="60662:60739" ph="&lt;head/&gt;" />
+              <marker date="1530644058286" expanded="true" signature="60673:60739" ph="&lt;script/&gt;" />
+              <marker date="1530644058286" expanded="true" signature="64619:64686" ph="{...}" />
+              <marker date="1530644058286" expanded="true" signature="65566:65644" ph="..." />
+              <marker date="1530644058286" expanded="true" signature="65683:65764" ph="{...}" />
+              <marker date="1530644058286" expanded="true" signature="67437:67515" ph="..." />
+              <marker date="1530644058286" expanded="true" signature="67554:67577" ph="{...}" />
+              <marker date="1530644058286" expanded="true" signature="68488:68566" ph="..." />
+              <marker date="1530644058286" expanded="true" signature="68604:68794" ph="{...}" />
+              <marker date="1530644058286" expanded="true" signature="70779:70845" ph="{...}" />
+              <marker date="1530644058286" expanded="true" signature="72573:72990" ph="{&quot;name&quot;: &quot;your-package&quot;...}" />
+              <marker date="1530644058286" expanded="true" signature="72611:72988" ph="{...}" />
+              <marker date="1530644058286" expanded="true" signature="72641:72741" ph="[...]" />
+              <marker date="1530644058286" expanded="true" signature="72768:72896" ph="{...}" />
+              <marker date="1530644058286" expanded="true" signature="72786:72890" ph="{&quot;branches&quot;: 90...}" />
+              <marker date="1530644058286" expanded="true" signature="75335:75453" ph="{...}" />
+              <marker date="1530644058286" expanded="true" signature="92412:92476" ph="{...}" />
+              <marker date="1530644058286" expanded="true" signature="116753:116801" ph="..." />
+            </folding>
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="240">
+          <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+          <folding>
+            <marker date="1530647853656" expanded="true" signature="83:325" ph="{&quot;google-map-react&quot;: &quot;^1.0.5&quot;...}" />
+          </folding>
         </state>
       </provider>
     </entry>
