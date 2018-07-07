@@ -1,0 +1,58 @@
+{
+  "results": [
+    {
+      "id": 1,
+      "companyName": "Pencil Sharpener",
+      "companyLogo": "url",
+      "companySite": "url",
+      "companyStatus": "startUp/SoftWare/Marketing company",
+      "companyAddress": [
+        {"city": "Oslo"},
+        {"address": "Kolejowa 47c"}
+      ],
+      "companySize": [
+        {"small": 10},
+        {"medium": 50},
+        {"large": 100}
+      ],
+      "offerStatus": "30",
+      "offerName": "Front-End Developer",
+      "offerDescription": "<p>100</p>",
+      "offerSkills": [
+        {"HTML": 4},
+        {"PHP": 4},
+        {"scss": 4}
+      ],
+      "offerSalary": "100",
+      "offerEmail": "hello@pencolsharpener.pl",
+      "offerForm": true
+    },
+    {
+      "id": 2,
+      "companyName": "Pencil Sharpener 2",
+      "companyLogo": "url",
+      "companySite": "url",
+      "companyStatus": "startUp/SoftWare/Marketing company",
+      "companyAddress": [
+        {"city": "Oslo"},
+        {"address": "Kolejowa 47c"}
+      ],
+      "companySize": [
+        {"small": 10},
+        {"medium": 50},
+        {"large": 100}
+      ],
+      "offerStatus": "30",
+      "offerName": "Front-End Developer",
+      "offerDescription": "<p>100</p>",
+      "offerSkills": [
+        {"HTML": 4},
+        {"PHP": 4},
+        {"scss": 4}
+      ],
+      "offerSalary": "100",
+      "offerEmail": "hello@pencolsharpener.pl",
+      "offerForm": true
+    }
+  ]
+}

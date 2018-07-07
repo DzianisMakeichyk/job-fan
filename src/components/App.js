@@ -1,25 +1,38 @@
 import React, { Component } from 'react';
-import { Row, Col } from 'antd';
-import GoogleMap from './GoogleMaps'
+import {
+    BrowserRouter as Router,
+    Route,
+    Switch
+} from 'react-router-dom';
+import { Provider } from 'react-redux'
+import { applyMiddleware, createStore } from 'redux'
+import { save, load } from 'redux-localstorage-simple';
+import { composeWithDevTools } from 'redux-devtools-extension'
+import logger from 'redux-logger'
+import thunk from 'redux-thunk'
+import rootReducer from '../rootReducer';
+import MainScreen from './MainScreen'
 
 import 'antd/dist/antd.css';
+
+const middleware = [logger, thunk];
+const store = createStore(
+    rootReducer,
+    load(),
+    composeWithDevTools(applyMiddleware( ...middleware, save())),
+);
+
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-          <Row>
-              <Col span={24} lg={12}>
-                  <p className="App-intro">
-                      To get started, edit <code>src/App.js</code> and save to reload.
-                  </p>
-              </Col>
-              <Col span={24} lg={12}>
-                  <GoogleMap />
-              </Col>
-          </Row>
-
-      </div>
+        <Provider store={store}>
+            <Router>
+                <Switch>
+                    <Route exact path="/" component={MainScreen} />
+                </Switch>
+            </Router>
+        </Provider>
     );
   }
 }
