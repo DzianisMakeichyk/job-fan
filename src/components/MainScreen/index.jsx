@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'antd';
 import GoogleMap from '../GoogleMaps'
-import Board from '../Board'
+import OfferList from '../OfferList'
 
 class MainScreen extends Component {
     render() {
         return (
             <Row>
                 <Col xs={24} lg={12}>
-                    <Board />
+                    <OfferList />
                 </Col>
                 <Col xs={24} lg={12}>
                     <GoogleMap />

@@ -1,0 +1,14 @@
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.cardDescription__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.cardDescription__more {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; }

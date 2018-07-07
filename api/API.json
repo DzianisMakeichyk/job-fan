@@ -15,8 +15,11 @@
         {"medium": 50},
         {"large": 100}
       ],
-      "offerStatus": "30",
+      "offerStatus": 29,
       "offerName": "Front-End Developer",
+      "offerTags": [
+          "php", "reactJS", "VueJs", "SCSS"
+      ],
       "offerDescription": "<p>100</p>",
       "offerSkills": [
         {"HTML": 4},
@@ -25,7 +28,7 @@
       ],
       "offerSalary": "100",
       "offerEmail": "hello@pencolsharpener.pl",
-      "offerForm": true
+      "offerForm": false
     },
     {
       "id": 2,
@@ -34,7 +37,7 @@
       "companySite": "url",
       "companyStatus": "startUp/SoftWare/Marketing company",
       "companyAddress": [
-        {"city": "Oslo"},
+        {"city": "Bergen"},
         {"address": "Kolejowa 47c"}
       ],
       "companySize": [
@@ -42,8 +45,11 @@
         {"medium": 50},
         {"large": 100}
       ],
-      "offerStatus": "30",
+      "offerStatus": 30,
       "offerName": "Front-End Developer",
+      "offerTags": [
+        "php", "REDUX", "VUEX", "SCSS"
+      ],
       "offerDescription": "<p>100</p>",
       "offerSkills": [
         {"HTML": 4},

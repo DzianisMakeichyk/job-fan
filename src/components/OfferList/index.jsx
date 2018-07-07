@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import './style.css'
 import { getApi } from '../../actions';
+import { Row } from 'antd';
+import Offer from '../Offer'
 
 class Board extends Component {
     componentDidMount() {
@@ -12,11 +14,12 @@ class Board extends Component {
     }
 
     render() {
-        // console.log(this.props)
+        const offers = this.props.dates;
+
         return (
-            <div>
-                <h1>Hello</h1>
-            </div>
+            <Row>
+                {offers.map(offer => <Offer key={offer.id} offer={offer} />)}
+            </Row>
         );
     }
 }

@@ -1,0 +1,28 @@
+.card {
+  display: flex;
+  //flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  &__left {
+
+  }
+
+  &__right {
+
+  }
+}
+
+.cardDescription {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__more {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
