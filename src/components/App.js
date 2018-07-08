@@ -10,8 +10,11 @@ import { save, load } from 'redux-localstorage-simple';
 import { composeWithDevTools } from 'redux-devtools-extension'
 import logger from 'redux-logger'
 import thunk from 'redux-thunk'
-import rootReducer from '../rootReducer';
+import { Row, Col } from 'antd'
+import rootReducer from '../rootReducer'
 import MainScreen from './MainScreen'
+import OfferDetails from './OfferDetails'
+import GoogleMap from './GoogleMaps'
 
 import 'antd/dist/antd.css';
 
@@ -27,11 +30,19 @@ class App extends Component {
   render() {
     return (
         <Provider store={store}>
-            <Router>
-                <Switch>
-                    <Route exact path="/" component={MainScreen} />
-                </Switch>
-            </Router>
+            <Row>
+                <Col xs={24} lg={12}>
+                    <Router>
+                        <Switch>
+                            <Route exact path="/" component={MainScreen} />
+                            <Route exact path="/:id" component={OfferDetails} />
+                        </Switch>
+                    </Router>
+                </Col>
+                <Col xs={24} lg={12}>
+                    <GoogleMap />
+                </Col>
+            </Row>
         </Provider>
     );
   }

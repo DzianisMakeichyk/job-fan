@@ -1,6 +1,5 @@
 .card {
   display: flex;
-  //flex-direction: row;
   justify-content: space-between;
   align-items: center;
 
@@ -9,7 +8,10 @@
   }
 
   &__right {
-
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: right;
   }
 }
 

@@ -1,4 +1,5 @@
 import { GET_API } from './actions'
+import { GET_DETAILS } from './actions'
 
 const initialState = {
     dates: []
@@ -12,6 +13,11 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 dates: data
+            };
+        case GET_DETAILS:
+            return {
+                ...state,
+                details: data
             };
         default:
             return state;
