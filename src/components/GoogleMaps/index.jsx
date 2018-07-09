@@ -3,7 +3,7 @@ import GoogleMapReact from 'google-map-react';
 import GoogleMapApiKey from '../../keys/apiKeys';
 import './style.css'
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+const Marker = ({ text }) => <div className="SuperAwesomePin"></div>;
 
 class SimpleMap extends Component {
     static defaultProps = {
@@ -23,8 +23,6 @@ class SimpleMap extends Component {
         const props = this.props;
         const ApiKey = GoogleMapApiKey.GoogleMapApiKey;
 
-        console.log(ApiKey)
-
         return (
             <div className="googleMap">
                 <GoogleMapReact
@@ -34,7 +32,7 @@ class SimpleMap extends Component {
                 >
                     {props.markers.map((marker, i) =>{
                         return(
-                            <AnyReactComponent
+                            <Marker
                                 key={i}
                                 lat={marker.lat}
                                 lng={marker.lng}
