@@ -8,9 +8,24 @@ class Marker extends Component {
         console.log(marker)
     };
 
+    onEnterMarker = () => {
+        const marker = this.props.markerInfo;
+        console.log(marker)
+    };
+
+    onLeaveMarker = () => {
+        const marker = this.props.markerInfo;
+        console.log(marker)
+    };
+
     render() {
         return (
-            <div className="SuperAwesomePin" onClick={() => this.onClickMarker()}>
+            <div
+                className="SuperAwesomePin"
+                onClick={() => this.onClickMarker()}
+                onMouseEnter={() => this.onEnterMarker()}
+                onMouseLeave={() => this.onLeaveMarker()}
+            >
 
             </div>
         );

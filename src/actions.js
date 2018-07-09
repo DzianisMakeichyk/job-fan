@@ -3,7 +3,6 @@ export const GET_DETAILS = 'GET_DETAILS';
 
 export function getApi() {
     return async function (dispatch) {
-        // const res = await fetch('https://pencilsharpener.pl/api/testApi.json');
         const res = await fetch('http://localhost:3000/results');
         const dates = await res.json();
 
@@ -16,7 +15,6 @@ export function getApi() {
 
 export function getDetails(id) {
     return async function (dispatch) {
-        // const res = await fetch('https://pencilsharpener.pl/api/testApi.json');
         const res = await fetch(`http://localhost:3000/results/${id}`);
         const details = await res.json();
 

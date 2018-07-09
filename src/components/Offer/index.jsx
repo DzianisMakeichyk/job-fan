@@ -8,10 +8,15 @@ class Offer extends Component {
 
     render() {
         const { offer } = this.props;
+        // Slug
+        let slugName;
+        slugName = `${offer.companyAddress[0].city}-${offer.companyName}-${offer.offerName}`;
+        slugName = slugName.split(' ').join('-');
+        slugName = slugName.toLowerCase();
 
         return (
             <section>
-                <Link to={`/${offer.id}`}>
+                <Link to={`/${slugName}`}>
                     <Card>
                         <div className="card">
                             <div className="card__left">

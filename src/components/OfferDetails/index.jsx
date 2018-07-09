@@ -11,6 +11,8 @@ class Offer extends Component {
     componentDidMount() {
         const { getDetails, match } = this.props;
         getDetails(match.params.id);
+
+        console.log(this.props.match)
     }
 
     render() {

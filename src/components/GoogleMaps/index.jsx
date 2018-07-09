@@ -9,10 +9,7 @@ import './style.css'
 
 class SimpleMap extends Component {
     state = {
-        coords: [
-            {lat: 59.95, lng: 29.33},
-            {lat: 59.95, lng: 30.33}
-        ],
+        coords: [],
         isMapLoad: false
     };
 
@@ -42,6 +39,8 @@ class SimpleMap extends Component {
                 if (status === 'OK') {
                     const thisCoords = results[0].geometry.location.toJSON();
                     const coords = [thisCoords, ...this.state.coords];
+
+                    console.log(index)
 
                     this.setState({
                         coords,

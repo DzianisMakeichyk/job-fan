@@ -17,7 +17,8 @@ export default function (state = initialState, action) {
         case GET_DETAILS:
             return {
                 ...state,
-                details: data
+                details: data,
+                slug:
             };
         default:
             return state;
