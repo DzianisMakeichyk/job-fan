@@ -1,46 +1,73 @@
 import React, { Component } from 'react';
-import {Marker, GoogleMap} from 'google-map-react';
-import GoogleMapApiKey from '../../keys/apiKeys';
+import GoogleMapReact from 'google-map-react';
+import ApiKey from '../../keys/apiKeys';
 import './style.css'
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+const Marker = ({ text }) => <div className="SuperAwesomePin"></div>;
 
 class SimpleMap extends Component {
+    state = {
+        coords: [
+            {lat: 59.95, lng: 29.33}
+        ],
+        isMapLoad: false
+    };
+
     static defaultProps = {
         center: {
             lat: 59.95,
             lng: 30.33
         },
         zoom: 11,
-        markers: [
-            {lat: 59.95, lng: 30.33, img_src: 'YOUR-IMG-SRC'},
-            {lat: 59.85, lng: 30.23, img_src: 'YOUR-IMG-SRC' },
-            {lat: 59.75, lng: 30.13,  img_src: 'YOUR-IMG-SRC'}
-        ]
+        // marker: [
+        //     {lat: 59.95, lng: 30.33, img_src: 'YOUR-IMG-SRC'}
+        // ]
+    };
+    initGeocoder = ({ maps }) => {
+        const geocoder = new maps.Geocoder();
+
+        geocoder.geocode({ 'address': 'United Kingdom Bakerstreet, 2'}, (results, status) => {
+            if (status === 'OK') {
+                const coords = results[0].geometry.location.toJSON();
+                const updateCoords = [coords, ...this.state.coords];
+
+                this.setState({ coords:updateCoords, isMapLoad: true })
+
+                // console.log(this.state.coords)
+            } else {
+                console.log('Geocode was not successful for the following reason: ' + status);
+            }
+        });
+
     };
 
     render() {
         const props = this.props;
-        const ApiKey = GoogleMapApiKey.GoogleMapApiKey;
+        const state = this.state;
+        const key = ApiKey.GoogleMapApiKey;
+
+        // console.log(state.isMapLoad)
 
         return (
             <div className="googleMap">
-                <GoogleMap
-                    bootstrapURLKeys={{ key: ApiKey}}
+                <GoogleMapReact
+                    bootstrapURLKeys={{key}}
                     defaultCenter={props.center}
                     defaultZoom={props.zoom}
-                >
-                    {props.markers.map((marker, i) =>{
-                        return(
-                            <Marker
-                                key={i}
-                                lat={marker.lat}
-                                lng={marker.lng}
-                            />
-
-                        )
-                    })}
-                </GoogleMap>
+                    onGoogleApiLoaded={this.initGeocoder}
+                    >
+                    {state.coords.map((marker, i) => {
+                        console.log(marker)
+                            return (
+                                <Marker
+                                    key={i}
+                                    lat={marker.lat}
+                                    lng={marker.lng}
+                                />
+                            )
+                        })
+                    }
+                    </GoogleMapReact>
             </div>
         );
     }
