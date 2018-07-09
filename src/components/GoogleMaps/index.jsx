@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import GoogleMapReact from 'google-map-react';
+import {Marker, GoogleMap} from 'google-map-react';
 import GoogleMapApiKey from '../../keys/apiKeys';
 import './style.css'
 
@@ -23,18 +23,16 @@ class SimpleMap extends Component {
         const props = this.props;
         const ApiKey = GoogleMapApiKey.GoogleMapApiKey;
 
-        console.log(ApiKey)
-
         return (
             <div className="googleMap">
-                <GoogleMapReact
+                <GoogleMap
                     bootstrapURLKeys={{ key: ApiKey}}
                     defaultCenter={props.center}
                     defaultZoom={props.zoom}
                 >
                     {props.markers.map((marker, i) =>{
                         return(
-                            <AnyReactComponent
+                            <Marker
                                 key={i}
                                 lat={marker.lat}
                                 lng={marker.lng}
@@ -42,7 +40,7 @@ class SimpleMap extends Component {
 
                         )
                     })}
-                </GoogleMapReact>
+                </GoogleMap>
             </div>
         );
     }
