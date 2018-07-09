@@ -34,11 +34,11 @@ class SimpleMap extends Component {
         const geocoder = new maps.Geocoder();
         const dates = this.props.dates;
 
-        dates.map((index, i) => {
+        dates.map((index) => {
             const city = index.companyAddress[0].city;
             const address = index.companyAddress[1].address;
 
-            geocoder.geocode({ 'address': `${city} ${address}`}, (results, status) => {
+            return geocoder.geocode({ 'address': `${city} ${address}`}, (results, status) => {
                 if (status === 'OK') {
                     const thisCoords = results[0].geometry.location.toJSON();
                     const coords = [thisCoords, ...this.state.coords];
@@ -48,7 +48,6 @@ class SimpleMap extends Component {
                         isMapLoad: true
                     })
 
-                    // console.log(this.state.coords)
                 } else {
                     console.log('Geocode was not successful for the following reason: ' + status);
                 }
@@ -69,6 +68,7 @@ class SimpleMap extends Component {
                     defaultCenter={props.center}
                     defaultZoom={props.zoom}
                     onGoogleApiLoaded={this.initGeocoder}
+                    yesIWantToUseGoogleMapApiInternals={true}
                 >
                     {state.coords.map((marker, i) => {
                         return (
