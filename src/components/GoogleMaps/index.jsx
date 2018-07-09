@@ -7,7 +7,10 @@ const Marker = ({ text }) => <div className="SuperAwesomePin"></div>;
 
 class SimpleMap extends Component {
     state = {
-        coords: []
+        coords: [
+            {lat: 59.95, lng: 30.33}
+        ],
+        isMapLoad: false
     };
 
     static defaultProps = {
@@ -26,8 +29,9 @@ class SimpleMap extends Component {
         geocoder.geocode({ 'address': 'United Kingdom Bakerstreet, 2'}, (results, status) => {
             if (status === 'OK') {
                 const coords = results[0].geometry.location.toJSON();
+                const updateCoords = [coords, ...this.state.coords];
 
-                this.setState({...this.state.coords, coords })
+                this.setState({ updateCoords, isMapLoad: true })
             } else {
                 console.log('Geocode was not successful for the following reason: ' + status);
             }
@@ -40,28 +44,30 @@ class SimpleMap extends Component {
         const state = this.state;
         const key = ApiKey.GoogleMapApiKey;
 
-        console.log(state.coords)
-        console.log(props.marker)
+        console.log(state.isMapLoad)
 
         return (
             <div className="googleMap">
-                <GoogleMapReact
-                    bootstrapURLKeys={{ key }}
+                    <GoogleMapReact
+                    bootstrapURLKeys={{key}}
                     defaultCenter={props.center}
                     defaultZoom={props.zoom}
                     onGoogleApiLoaded={this.initGeocoder}
-                >
-                    {/*{state.coords.map((marker, i) =>{*/}
-                        {/*return(*/}
-                            {/*<Marker*/}
-                                {/*key={i}*/}
-                                {/*lat={state.coords.lat}*/}
-                                {/*lng={state.coords.lng}*/}
-                            {/*/>*/}
-
-                        {/*)*/}
-                    {/*})}*/}
-                </GoogleMapReact>
+                    >
+                    {(state.isMapLoad) (
+                        state.coords.map((marker, i) => {
+                            console.log('----------')
+                            console.log(state.coords)
+                            return (
+                                <Marker
+                                    key={i}
+                                    lat={state.coords.lat}
+                                    lng={state.coords.lng}
+                                />
+                            )
+                        })
+                    )}
+                    </GoogleMapReact>
             </div>
         );
     }
