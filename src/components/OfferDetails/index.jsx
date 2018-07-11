@@ -11,13 +11,10 @@ class Offer extends Component {
     componentDidMount() {
         const { getDetails, match } = this.props;
         getDetails(match.params.slug);
-        console.log(match.params.slug)
     }
 
     render() {
         const { details } = this.props;
-
-        console.log(details)
 
         return (
             <section>
