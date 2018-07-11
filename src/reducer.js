@@ -18,7 +18,6 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 details: data,
-                slug:
             };
         default:
             return state;

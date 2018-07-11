@@ -13,9 +13,9 @@ export function getApi() {
     }
 }
 
-export function getDetails(id) {
+export function getDetails(slug) {
     return async function (dispatch) {
-        const res = await fetch(`http://localhost:3000/results/${id}`);
+        const res = await fetch(`http://localhost:3000/results/?slug=${slug}`);
         const details = await res.json();
 
         return dispatch({

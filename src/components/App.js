@@ -35,7 +35,7 @@ class App extends Component {
                     <Router>
                         <Switch>
                             <Route exact path="/" component={MainScreen} />
-                            <Route exact path="/:id" component={OfferDetails} />
+                            <Route exact path="/:slug" component={OfferDetails} />
                         </Switch>
                     </Router>
                 </Col>

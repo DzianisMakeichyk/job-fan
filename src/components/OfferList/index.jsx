@@ -18,7 +18,7 @@ class Board extends Component {
 
         return (
             <Row>
-                {offers.map(offer => <Offer key={offer.id} offer={offer} />)}
+                {offers.map(offer => <Offer key={offer.slug} offer={offer} />)}
             </Row>
         );
     }

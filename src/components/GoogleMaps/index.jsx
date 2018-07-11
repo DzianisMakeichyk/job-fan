@@ -40,7 +40,7 @@ class SimpleMap extends Component {
                     const thisCoords = results[0].geometry.location.toJSON();
                     const coords = [thisCoords, ...this.state.coords];
 
-                    console.log(index)
+                    // console.log(index)
 
                     this.setState({
                         coords,
