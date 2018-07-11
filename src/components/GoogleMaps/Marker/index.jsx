@@ -34,7 +34,7 @@ class Marker extends Component {
             border: '5px solid pink'
         };
         const divStyle2 = {
-            border: '5px solid red'
+            border: '5px solid blue'
         };
 
         // console.log(markerInfo);
