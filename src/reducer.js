@@ -1,7 +1,8 @@
 import { GET_API, GET_DETAILS } from './actions'
 
 const initialState = {
-    dates: [{
+    dates: [],
+    details: [{
         isHover: false,
         isClick: false
     }],

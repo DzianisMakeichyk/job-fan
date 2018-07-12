@@ -9,21 +9,11 @@ class Marker extends Component {
     };
 
     onEnterMarker = () => {
-        const markerInfo = this.props.info;
-        console.log(!markerInfo.isHover)
-
-        this.setState({
-            isHover: !markerInfo.isHover
-        })
+        console.log(this.props.info)
     };
 
     onLeaveMarker = () => {
-        const markerInfo = this.props.info;
-        // console.log(markerInfo.isHover)
 
-        this.setState({
-            isHover: !markerInfo.isHover
-        })
     };
 
     render() {
