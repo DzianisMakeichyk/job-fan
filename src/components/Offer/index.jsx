@@ -10,36 +10,20 @@ import './styles.css'
 class Offer extends Component {
 
     componentWillMount() {
-
-        // const getApi = this.props.getApi;
+        // const { offer } = this.props;
         //
-        // getApi();
-
-        const dates = this.props.dates;
-
-        const { offer } = this.props;
-
-        let slugName;
-        slugName = `${offer.companyAddress[0].city}-${offer.companyName}-${offer.offerName}`;
-        slugName = slugName.split(' ').join('-');
-        slugName = slugName.toLowerCase();
-
-        // offer.dispatch({"slug": slugName})
-
-        // console.log(offer)
+        // let slugName;
+        // slugName = `${offer.companyAddress[0].city}-${offer.companyName}-${offer.offerName}`;
+        // slugName = slugName.split(' ').join('-');
+        // slugName = slugName.toLowerCase();
     }
 
     render() {
         const { offer } = this.props;
-        // Slug
-        let slugName;
-        slugName = `${offer.companyAddress[0].city}-${offer.companyName}-${offer.offerName}`;
-        slugName = slugName.split(' ').join('-');
-        slugName = slugName.toLowerCase();
 
         return (
             <section>
-                <Link to={`/${slugName}`}>
+                <Link to={`/${offer.slug}`}>
                     <Card>
                         <div className="card">
                             <div className="card__left">
