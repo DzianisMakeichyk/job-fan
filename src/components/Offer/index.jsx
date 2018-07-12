@@ -1,10 +1,33 @@
 import React, { Component } from 'react';
 import { Card, Avatar, Badge } from 'antd';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { getApi } from '../../actions';
 
 import './styles.css'
 
 class Offer extends Component {
+
+    componentWillMount() {
+
+        // const getApi = this.props.getApi;
+        //
+        // getApi();
+
+        const dates = this.props.dates;
+
+        const { offer } = this.props;
+
+        let slugName;
+        slugName = `${offer.companyAddress[0].city}-${offer.companyName}-${offer.offerName}`;
+        slugName = slugName.split(' ').join('-');
+        slugName = slugName.toLowerCase();
+
+        offer.dispatch({"slug": slugName})
+
+        console.log(offer)
+    }
 
     render() {
         const { offer } = this.props;
@@ -60,4 +83,13 @@ class Offer extends Component {
     }
 }
 
-export default Offer;
+const mapStateToProps = (state) => ({
+    dates: state.dates.dates
+});
+
+const mapDispatchToProps = (dispatch) => bindActionCreators({
+    getApi
+}, dispatch);
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Offer);

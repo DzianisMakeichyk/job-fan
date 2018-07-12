@@ -10,7 +10,7 @@ class Board extends Component {
     componentDidMount() {
         const getApi = this.props.getApi;
 
-        getApi()
+        getApi();
     }
 
     render() {
