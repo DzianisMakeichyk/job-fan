@@ -24,9 +24,9 @@ class Offer extends Component {
         slugName = slugName.split(' ').join('-');
         slugName = slugName.toLowerCase();
 
-        offer.dispatch({"slug": slugName})
+        // offer.dispatch({"slug": slugName})
 
-        console.log(offer)
+        // console.log(offer)
     }
 
     render() {

@@ -25,7 +25,6 @@ const store = createStore(
     composeWithDevTools(applyMiddleware( ...middleware, save())),
 );
 
-
 class App extends Component {
   render() {
     return (

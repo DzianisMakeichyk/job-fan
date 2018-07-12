@@ -28,8 +28,7 @@
       "offerSalary": "100",
       "offerEmail": "hello@pencolsharpener.pl",
       "offerForm": false,
-      "isHover": false,
-      "isClick": false
+      "slug": "warsaw-pencil-sharpener-front-end-developer"
     },
     {
       "companyName": "Pencil Sharpener 2",
@@ -59,8 +58,7 @@
       "offerSalary": "100",
       "offerEmail": "hello@pencolsharpener.pl",
       "offerForm": true,
-      "isHover": false,
-      "isClick": false
+      "slug": "warsaw-pencil-sharpener-2-front-end-developer"
     }
   ]
 }
