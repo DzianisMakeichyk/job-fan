@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import GoogleMapReact from 'google-map-react';
-import { getApi } from '../../actions';
+import { stateDetails } from '../../actions';
 import ApiKey from '../../keys/apiKeys';
 import Marker from './Marker'
 import './style.css'
@@ -22,13 +22,14 @@ class SimpleMap extends Component {
     };
 
     componentDidMount() {
-        const getApi = this.props.getApi;
+        const stateDetails = this.props.stateDetails;
 
-        getApi()
+        stateDetails();
     }
 
     initGeocoder = ({ maps }) => {
         const geocoder = new maps.Geocoder();
+        // console.log(this.props)
         const dates = this.props.dates;
 
         dates.map((index) => {
@@ -85,11 +86,11 @@ class SimpleMap extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    dates: state.dates.dates
+    dates: state.dates.stateDates
 });
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({
-    getApi
+    stateDetails
 }, dispatch);
 
 

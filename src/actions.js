@@ -26,14 +26,14 @@ export function getDetails(slug) {
     }
 }
 
-export function stateDetails() {
+export function stateDetails(setState) {
     return async function (dispatch) {
         const res = await fetch('http://localhost:3000/results');
-        const stateDetails = await res.json();
+        let stateDetails = await res.json();
 
         return dispatch({
             type: 'STATE_DETAILS',
-            data: stateDetails,
+            data: (setState = stateDetails),
         });
     }
 }

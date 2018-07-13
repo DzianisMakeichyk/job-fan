@@ -31,6 +31,7 @@ class MainScreen extends Component {
             store.dispatch(stateDetails(newStateDates));
             this.state.startDispatch = false;
 
+            console.log('--- SPACE ---')
             console.log(this.props.stateDates)
         }
 
