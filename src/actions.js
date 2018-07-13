@@ -1,9 +1,9 @@
 export const GET_API = 'GET_API';
 export const GET_DETAILS = 'GET_DETAILS';
+export const STATE_DETAILS = 'STATE_DETAILS';
 
 export function getApi() {
     return async function (dispatch) {
-        // const res = await fetch('https://pencilsharpener.pl/api/testApi.json');
         const res = await fetch('http://localhost:3000/results');
         const dates = await res.json();
 
@@ -14,15 +14,26 @@ export function getApi() {
     }
 }
 
-export function getDetails(id) {
+export function getDetails(slug) {
     return async function (dispatch) {
-        // const res = await fetch('https://pencilsharpener.pl/api/testApi.json');
-        const res = await fetch(`http://localhost:3000/results/${id}`);
+        const res = await fetch(`http://localhost:3000/results/?slug=${slug}`);
         const details = await res.json();
 
         return dispatch({
             type: 'GET_DETAILS',
             data: details,
+        });
+    }
+}
+
+export function stateDetails() {
+    return async function (dispatch) {
+        const res = await fetch('http://localhost:3000/results');
+        const stateDetails = await res.json();
+
+        return dispatch({
+            type: 'STATE_DETAILS',
+            data: stateDetails,
         });
     }
 }

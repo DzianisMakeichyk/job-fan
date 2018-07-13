@@ -1,13 +1,12 @@
 {
   "results": [
     {
-      "id": 1,
       "companyName": "Pencil Sharpener",
       "companyLogo": "url",
       "companySite": "url",
       "companyStatus": "startUp/SoftWare/Marketing company",
       "companyAddress": [
-        {"city": "Oslo"},
+        {"city": "Warsaw"},
         {"address": "Kolejowa 47c"}
       ],
       "companySize": [
@@ -28,17 +27,17 @@
       ],
       "offerSalary": "100",
       "offerEmail": "hello@pencolsharpener.pl",
-      "offerForm": false
+      "offerForm": false,
+      "slug": "warsaw-pencil-sharpener-front-end-developer"
     },
     {
-      "id": 2,
       "companyName": "Pencil Sharpener 2",
       "companyLogo": "url",
       "companySite": "url",
       "companyStatus": "startUp/SoftWare/Marketing company",
       "companyAddress": [
-        {"city": "Bergen"},
-        {"address": "Kolejowa 47c"}
+        {"city": "Warsaw"},
+        {"address": "Miedziana 12"}
       ],
       "companySize": [
         {"small": 10},
@@ -58,7 +57,8 @@
       ],
       "offerSalary": "100",
       "offerEmail": "hello@pencolsharpener.pl",
-      "offerForm": true
+      "offerForm": true,
+      "slug": "warsaw-pencil-sharpener-2-front-end-developer"
     }
   ]
 }

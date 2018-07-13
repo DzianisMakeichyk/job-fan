@@ -1,8 +1,12 @@
-import { GET_API } from './actions'
-import { GET_DETAILS } from './actions'
+import { GET_API, GET_DETAILS, STATE_DETAILS } from './actions'
 
 const initialState = {
-    dates: []
+    dates: [],
+    details: [{
+        isHover: false,
+        isClick: false
+    }],
+    stateDetails: []
 };
 
 export default function (state = initialState, action) {
@@ -18,6 +22,11 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 details: data
+            };
+        case STATE_DETAILS:
+            return {
+                ...state,
+                stateDates: data
             };
         default:
             return state;

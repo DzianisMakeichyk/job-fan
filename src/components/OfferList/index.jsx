@@ -10,7 +10,7 @@ class Board extends Component {
     componentDidMount() {
         const getApi = this.props.getApi;
 
-        getApi()
+        getApi();
     }
 
     render() {
@@ -18,14 +18,14 @@ class Board extends Component {
 
         return (
             <Row>
-                {offers.map(offer => <Offer key={offer.id} offer={offer} />)}
+                {offers.map(offer => <Offer key={offer.slug} offer={offer} />)}
             </Row>
         );
     }
 }
 
 const mapStateToProps = (state) => ({
-    dates: state.dates.dates
+    dates: state.dates.dates,
 });
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({

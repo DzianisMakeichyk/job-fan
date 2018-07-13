@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 import { Provider } from 'react-redux'
 import { applyMiddleware, createStore } from 'redux'
-import { save, load } from 'redux-localstorage-simple';
+// import { save, load } from 'redux-localstorage-simple';
 import { composeWithDevTools } from 'redux-devtools-extension'
 import logger from 'redux-logger'
 import thunk from 'redux-thunk'
@@ -21,10 +21,10 @@ import 'antd/dist/antd.css';
 const middleware = [logger, thunk];
 const store = createStore(
     rootReducer,
-    load(),
-    composeWithDevTools(applyMiddleware( ...middleware, save())),
+    // load(),
+    composeWithDevTools(applyMiddleware( ...middleware)),
+    // composeWithDevTools(applyMiddleware( ...middleware, save())),
 );
-
 
 class App extends Component {
   render() {
@@ -34,8 +34,8 @@ class App extends Component {
                 <Col xs={24} lg={12}>
                     <Router>
                         <Switch>
-                            <Route exact path="/" component={MainScreen} />
-                            <Route exact path="/:id" component={OfferDetails} />
+                            <Route exact path="/" component={() => <MainScreen store={store}/>} />
+                            <Route exact path="/:slug" component={OfferDetails} />
                         </Switch>
                     </Router>
                 </Col>

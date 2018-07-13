@@ -10,7 +10,7 @@ import { getDetails } from '../../actions';
 class Offer extends Component {
     componentDidMount() {
         const { getDetails, match } = this.props;
-        getDetails(match.params.id);
+        getDetails(match.params.slug);
     }
 
     render() {
@@ -19,7 +19,7 @@ class Offer extends Component {
         return (
             <section>
                 <h1>
-                    {details.companyName}
+                    {details[0].companyName}
                 </h1>
             </section>
         );
