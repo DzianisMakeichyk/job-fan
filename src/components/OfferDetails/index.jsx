@@ -18,9 +18,11 @@ class Offer extends Component {
 
         return (
             <section>
-                <h1>
-                    {details[0].companyName}
-                </h1>
+                {details[0] ?
+                    <h1>
+                        {details[0].companyName}
+                    </h1> : ''
+                }
             </section>
         );
     }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { stateDetails } from '../../actions';
+import { getApi, stateDetails } from '../../actions';
 import OfferList from '../OfferList'
 
 class MainScreen extends Component {
@@ -12,28 +12,28 @@ class MainScreen extends Component {
         };
     }
     componentDidMount() {
-        const stateDetails = this.props.stateDetails;
+        const getApi = this.props.getApi;
 
-        stateDetails();
+        getApi();
     }
 
     render() {
-        const stateDates = this.props.stateDates;
+        const dates = this.props.dates;
         const store = this.props.store;
         let addDetails = {
             isHover: false,
             isClick: false
         };
 
-        if(stateDates && this.state.startDispatch) {
-            let newStateDates = stateDates.map(state => Object.assign(state, addDetails));
+        // if(dates && this.state.startDispatch) {
+            let newStateDates = dates.map(state => Object.assign(state, addDetails));
             //Dispatch
             store.dispatch(stateDetails(newStateDates));
             this.state.startDispatch = false;
 
-            console.log('--- SPACE ---')
-            console.log(this.props.stateDates)
-        }
+            console.log('--- SPACE ---');
+            console.log(this.props.dates)
+        // }
 
         return (
             <OfferList />
@@ -42,10 +42,11 @@ class MainScreen extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    stateDates: state.dates.stateDates
+    dates: state.dates.dates
 });
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({
+    getApi,
     stateDetails
 }, dispatch);
 

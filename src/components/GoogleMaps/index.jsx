@@ -86,7 +86,7 @@ class SimpleMap extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    dates: state.dates.stateDates
+    dates: state.dates.dates
 });
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({
