@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getApi, stateDetails } from '../../actions';
 import OfferList from '../OfferList'
+import store from '../../store'
 
 class MainScreen extends Component {
     componentDidMount() {
@@ -13,7 +14,6 @@ class MainScreen extends Component {
 
     render() {
         const dates = this.props.dates;
-        const store = this.props.store;
         let addDetails = {
             isHover: false,
             isClick: false

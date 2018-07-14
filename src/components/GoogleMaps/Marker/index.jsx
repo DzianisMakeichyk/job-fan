@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { stateDetails } from '../../../actions';
 import './style.css'
 
 class Marker extends Component {
@@ -9,11 +10,13 @@ class Marker extends Component {
     };
 
     onEnterMarker = () => {
-        console.log(this.props.info)
+        const markerInfo = this.props.info;
+        markerInfo.isHover = !markerInfo.isHover
     };
 
     onLeaveMarker = () => {
-
+        const markerInfo = this.props.info;
+        markerInfo.isHover = !markerInfo.isHover
     };
 
     render() {
