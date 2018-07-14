@@ -5,12 +5,6 @@ import { getApi, stateDetails } from '../../actions';
 import OfferList from '../OfferList'
 
 class MainScreen extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            startDispatch: true
-        };
-    }
     componentDidMount() {
         const getApi = this.props.getApi;
 
@@ -24,16 +18,10 @@ class MainScreen extends Component {
             isHover: false,
             isClick: false
         };
+        let newStateDates = dates.map(state => Object.assign(state, addDetails));
 
-        // if(dates && this.state.startDispatch) {
-            let newStateDates = dates.map(state => Object.assign(state, addDetails));
-            //Dispatch
-            store.dispatch(stateDetails(newStateDates));
-            this.state.startDispatch = false;
-
-            console.log('--- SPACE ---');
-            console.log(this.props.dates)
-        // }
+        //Dispatch
+        store.dispatch(stateDetails(newStateDates));
 
         return (
             <OfferList />
