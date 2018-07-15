@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getApi, stateDetails } from '../../actions';
 import OfferList from '../OfferList'
+import CityList from '../CityList'
 import store from '../../store'
 
 class MainScreen extends Component {
@@ -27,7 +28,10 @@ class MainScreen extends Component {
         store.dispatch(stateDetails(newStateDates));
 
         return (
-            <OfferList />
+            <div>
+                <CityList />
+                <OfferList />
+            </div>
         );
     }
 }

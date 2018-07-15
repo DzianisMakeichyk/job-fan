@@ -8,7 +8,7 @@ import Offer from '../Offer'
 
 class Board extends Component {
     componentDidMount() {
-        const getApi = this.props.getApi;
+        const { getApi } = this.props;
 
         getApi();
     }
