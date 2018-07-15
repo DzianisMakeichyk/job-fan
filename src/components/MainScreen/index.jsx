@@ -18,7 +18,10 @@ class MainScreen extends Component {
             isHover: false,
             isClick: false
         };
-        let newStateDates = dates.map(state => Object.assign(state, addDetails));
+
+        const { offer } = this.props;
+
+        let newStateDates = dates.map(state => Object.assign(state, addDetails, {slug: `${state.companyAddress[0].city}-${state.companyName}-${state.offerName}`.split(' ').join('-').toLowerCase()}));
 
         //Dispatch
         store.dispatch(stateDetails(newStateDates));

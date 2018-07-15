@@ -1,4 +1,4 @@
-import { GET_API, GET_DETAILS, STATE_DETAILS } from './actions'
+import { GET_API, GET_DETAILS, STATE_DETAILS } from '../actions'
 
 const initialState = {
     dates: [],

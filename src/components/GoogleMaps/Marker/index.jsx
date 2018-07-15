@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { stateDetails } from '../../../actions';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import update from 'react-addons-update';
+import store from '../../../store'
 import './style.css'
 
 class Marker extends Component {
@@ -10,19 +14,23 @@ class Marker extends Component {
     };
 
     onEnterMarker = () => {
-        const markerInfo = this.props.info;
-        markerInfo.isHover = !markerInfo.isHover
+        this.newMarkerInfo();
     };
 
     onLeaveMarker = () => {
+        this.newMarkerInfo();
+    };
+
+    newMarkerInfo = () => {
         const markerInfo = this.props.info;
-        markerInfo.isHover = !markerInfo.isHover
+
+        const newMarkerInfo = update(markerInfo, {isHover: {$apply: () => { return markerInfo.isHover = !markerInfo.isHover }}});
+
+        store.dispatch(stateDetails(newMarkerInfo));
     };
 
     render() {
-        let markerInfo;
-            markerInfo = this.props.info;
-            markerInfo = markerInfo.isHover;
+        const { info } = this.props;
         const divStyle = {
             border: '5px solid pink'
         };
@@ -30,14 +38,14 @@ class Marker extends Component {
             border: '5px solid blue'
         };
 
-        // console.log(markerInfo);
         return (
+
             <div
                 className="SuperAwesomePin"
                 onClick={() => this.onClickMarker()}
                 onMouseEnter={() => this.onEnterMarker()}
                 onMouseLeave={() => this.onLeaveMarker()}
-                style={markerInfo ? divStyle : divStyle2}
+                style={info.isHover ? divStyle : divStyle2}
             >
 
             </div>
@@ -45,4 +53,9 @@ class Marker extends Component {
     }
 }
 
-export default Marker;
+const mapDispatchToProps = (dispatch) => bindActionCreators({
+    stateDetails
+}, dispatch);
+
+
+export default connect(mapDispatchToProps)(Marker);

@@ -3,29 +3,56 @@ import { Card, Avatar, Badge } from 'antd';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { getApi } from '../../actions';
+import { getApi, stateDetails } from '../../actions';
+import update from 'react-addons-update';
+import store from '../../store'
 
 import './styles.css'
 
 class Offer extends Component {
+    constructor(props) {
+        super(props);
+    }
 
-    componentWillMount() {
-        // const { offer } = this.props;
-        //
-        // let slugName;
-        // slugName = `${offer.companyAddress[0].city}-${offer.companyName}-${offer.offerName}`;
-        // slugName = slugName.split(' ').join('-');
-        // slugName = slugName.toLowerCase();
+    onEnterMarker = () => {
+        this.newMarkerInfo();
+    };
+
+    onLeaveMarker = () => {
+        this.newMarkerInfo();
+    };
+
+    newMarkerInfo = () => {
+        const markerInfo = this.props.offer;
+        const newMarkerInfo = update(markerInfo, {isHover: {$apply: () => { return markerInfo.isHover = !markerInfo.isHover }}});
+
+        store.dispatch(stateDetails(newMarkerInfo));
+    };
+    componentWillReceiveProps(nextProps) {
+        this.setState({isHoverMe: nextProps.offer.isHover});
     }
 
     render() {
         const { offer } = this.props;
+        const divStyle = {
+            border: '5px solid pink'
+        };
+        const divStyle2 = {
+            border: '5px solid blue'
+        };
 
         return (
-            <section>
-                <Link to={`/${offer.slug}`}>
+            <section
+                onMouseEnter={() => this.onEnterMarker()}
+                onMouseLeave={() => this.onLeaveMarker()}
+                style={offer.isHover ? divStyle : divStyle2}>
+                <Link
+                    to={`/${offer.slug}`}
+                >
                     <Card>
-                        <div className="card">
+                        <div
+                            className="card"
+                        >
                             <div className="card__left">
                                 <div className="cardDescription">
                                     <div className="cardDescription__wrapper">
@@ -72,7 +99,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({
-    getApi
+    getApi,
+    stateDetails
 }, dispatch);
 
 
