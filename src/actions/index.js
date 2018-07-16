@@ -37,14 +37,15 @@ export function stateDetails(stateDetails) {
     }
 }
 
-export function getMain() {
+export function getMain(stateDetails) {
     return async function (dispatch) {
         const res = await fetch('http://localhost:3000/main');
         const dates = await res.json();
+        const datesUpdated = await stateDetails;
 
         return dispatch({
             type: 'GET_MAIN',
-            data: dates,
+            data: datesUpdated || dates,
         });
     }
 }

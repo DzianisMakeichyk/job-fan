@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getMain } from '../../actions';
 import { Row, Col, Button } from 'antd';
+import update from 'react-addons-update';
+import store from '../../store'
 
 class CityList extends Component {
     componentDidMount() {
@@ -11,8 +13,17 @@ class CityList extends Component {
         getMain();
     }
 
+    onCurrentMap = (current) => {
+        const getCurrentMain = this.props.main[0];
+        const newCurrentCenterMap = update(getCurrentMain, {currentCenterMap: {$apply: () => { return current }}});
+
+        // store.dispatch(getMain(newCurrentCenterMap));
+    };
+
     render() {
         const { main } = this.props;
+
+        console.log(main)
 
         return (
             <Row>
@@ -20,7 +31,7 @@ class CityList extends Component {
                     index.cities.map(cities =>
                         Object.keys(cities).map(city =>
                             <Col className="gutter-row" key={city}>
-                                <Button>{city}</Button>
+                                <Button onClick={() => this.onCurrentMap(city)}>{city}</Button>
                             </Col>
                         )
                     )

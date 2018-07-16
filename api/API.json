@@ -59,17 +59,20 @@
       "offerForm": true
     }
   ],
-  "main": [{
-    "cities": [{
-      "warsaw": [{
-        "lat": 52.2330649,
-        "lng": 20.9207693
+  "main": [
+    {
+      "cities": [{
+        "warsaw": [{
+          "lat": 52.2330649,
+          "lng": 20.9207693
+        }],
+        "cracow": [{
+          "lat": 50.0572303,
+          "lng": 19.9681101
+        }]
       }],
-      "cracow": [{
-        "lat": 50.0572303,
-        "lng": 19.9681101
-      }]
-    }],
-    "technologies": ["html", "scss"]
-  }]
+      "technologies": ["html", "scss"],
+      "currentCenterMap": "hello"
+    }
+  ]
 }
