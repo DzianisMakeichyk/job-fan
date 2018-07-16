@@ -17,14 +17,9 @@ class CityList extends Component {
         return (
             <Row>
                 {main.map(index =>
-                    index.cities.map(cities =>
-                        Object.keys(cities).map(city =>
-                            <Col className="gutter-row" key={city}>
-                                <Button>{city}</Button>
-                            </Col>
-                        )
-                    )
-                )}
+                    <Col className="gutter-row" key={index.cities}>
+                        {index.technologies.map(technologie => <Button key={technologie}>{technologie}</Button>)}
+                    </Col>)}
             </Row>
         );
     }

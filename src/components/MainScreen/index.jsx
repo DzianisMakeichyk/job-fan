@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { getApi, stateDetails } from '../../actions';
 import OfferList from '../OfferList'
 import CityList from '../CityList'
+import TechnoList from '../TechnoList'
 import store from '../../store'
 
 class MainScreen extends Component {
@@ -30,6 +31,7 @@ class MainScreen extends Component {
         return (
             <div>
                 <CityList />
+                <TechnoList />
                 <OfferList />
             </div>
         );
