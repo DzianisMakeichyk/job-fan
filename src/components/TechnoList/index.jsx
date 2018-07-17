@@ -13,15 +13,27 @@ class CityList extends Component {
 
     render() {
         const { main } = this.props;
+        const technologies = main.technologies;
 
-        return (
-            <Row>
-                {main.map(index =>
-                    <Col className="gutter-row" key={index.cities}>
-                        {index.technologies.map(technologie => <Button key={technologie}>{technologie}</Button>)}
-                    </Col>)}
-            </Row>
-        );
+        if(typeof technologies !== 'undefined') {
+            let technologie = technologies.map(technologie =>
+                    <Col className="gutter-row" key={technologie}>
+                        <Button onClick={() => this.onCurrentMap(technologie)}>{technologie}</Button>
+                    </Col>
+            );
+
+            return (
+                <Row>
+                    {technologie}
+                </Row>
+            );
+        } else {
+            return (
+                <h1>
+                    Loading...
+                </h1>
+            )
+        }
     }
 }
 

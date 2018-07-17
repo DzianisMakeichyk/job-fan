@@ -14,30 +14,39 @@ class CityList extends Component {
     }
 
     onCurrentMap = (current) => {
-        const getCurrentMain = this.props.main[0];
+        const getCurrentMain = this.props.main;
         const newCurrentCenterMap = update(getCurrentMain, {currentCenterMap: {$apply: () => { return current }}});
 
-        // store.dispatch(getMain(newCurrentCenterMap));
+        // console.log(newCurrentCenterMap)
+
+        store.dispatch(getMain(newCurrentCenterMap));
     };
 
     render() {
         const { main } = this.props;
+        const cities = main.cities;
 
-        console.log(main)
+        if(typeof cities !== 'undefined') {
+            let city = cities.map(cities =>
+                Object.keys(cities).map(city =>
+                    <Col className="gutter-row" key={city}>
+                        <Button onClick={() => this.onCurrentMap(city)}>{city}</Button>
+                    </Col>
+                )
+            );
 
-        return (
-            <Row>
-                {main.map(index =>
-                    index.cities.map(cities =>
-                        Object.keys(cities).map(city =>
-                            <Col className="gutter-row" key={city}>
-                                <Button onClick={() => this.onCurrentMap(city)}>{city}</Button>
-                            </Col>
-                        )
-                    )
-                )}
-            </Row>
-        );
+            return (
+                <Row>
+                    {city}
+                </Row>
+            );
+        } else {
+            return (
+                <p>
+                    Loading...
+                </p>
+            )
+        }
     }
 }
 

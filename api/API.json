@@ -59,8 +59,7 @@
       "offerForm": true
     }
   ],
-  "main": [
-    {
+  "main": {
       "cities": [{
         "warsaw": [{
           "lat": 52.2330649,
@@ -74,5 +73,4 @@
       "technologies": ["html", "scss"],
       "currentCenterMap": "hello"
     }
-  ]
 }
