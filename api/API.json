@@ -71,6 +71,9 @@
         }]
       }],
       "technologies": ["html", "scss"],
-      "currentCenterMap": "hello"
+      "currentCenterMap": {
+        "lat": 52.2330649,
+        "lng": 20.9207693
+      }
     }
 }

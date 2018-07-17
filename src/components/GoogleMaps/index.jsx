@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import GoogleMapReact from 'google-map-react';
-import { stateDetails } from '../../actions';
+import { stateDetails, getMain } from '../../actions';
 import ApiKey from '../../keys/apiKeys';
 import Marker from './Marker'
 import './style.css'
@@ -10,26 +10,30 @@ import './style.css'
 class SimpleMap extends Component {
     state = {
         coords: [],
-        isMapLoad: false
+        isMapLoad: false,
+        zoom: 11
+
     };
 
-    static defaultProps = {
-        center: {
-            lat: 52.2330649,
-            lng: 20.9207693
-        },
-        zoom: 11
-    };
+    shouldComponentUpdate(nextProps) {
+        // const currentCity = nextProps.main.currentCenterMap;
+        // const allCities = nextProps.main.cities;
+
+        console.log(nextProps.main.currentCenterMap !== this.props.main.currentCenterMap)
+
+        return nextProps.main.currentCenterMap !== this.props.main.currentCenterMap
+    }
 
     componentDidMount() {
         const stateDetails = this.props.stateDetails;
+        const getMain = this.props.getMain;
 
+        getMain();
         stateDetails();
     }
 
     initGeocoder = ({ maps }) => {
         const geocoder = new maps.Geocoder();
-        // console.log(this.props)
         const dates = this.props.dates;
 
         dates.map((index) => {
@@ -51,7 +55,6 @@ class SimpleMap extends Component {
                 }
             });
         });
-
     };
 
     render() {
@@ -63,8 +66,8 @@ class SimpleMap extends Component {
             <div className="googleMap">
                 <GoogleMapReact
                     bootstrapURLKeys={{key}}
-                    defaultCenter={props.center}
-                    defaultZoom={props.zoom}
+                    defaultCenter={props.main.currentCenterMap}
+                    defaultZoom={state.zoom}
                     onGoogleApiLoaded={this.initGeocoder}
                     yesIWantToUseGoogleMapApiInternals={true}
                 >
@@ -86,11 +89,13 @@ class SimpleMap extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    dates: state.dates.dates
+    dates: state.dates.dates,
+    main: state.dates.mainInfo
 });
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({
-    stateDetails
+    stateDetails,
+    getMain
 }, dispatch);
 
 

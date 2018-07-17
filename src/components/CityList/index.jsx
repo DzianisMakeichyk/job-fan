@@ -15,9 +15,8 @@ class CityList extends Component {
 
     onCurrentMap = (current) => {
         const getCurrentMain = this.props.main;
-        const newCurrentCenterMap = update(getCurrentMain, {currentCenterMap: {$apply: () => { return current }}});
-
-        // console.log(newCurrentCenterMap)
+        const currentLocation = getCurrentMain.cities[0][current][0];
+        const newCurrentCenterMap = update(getCurrentMain, {currentCenterMap: {$apply: () => { return currentLocation }}});
 
         store.dispatch(getMain(newCurrentCenterMap));
     };
