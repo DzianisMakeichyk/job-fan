@@ -15,15 +15,6 @@ class SimpleMap extends Component {
 
     };
 
-    shouldComponentUpdate(nextProps) {
-        // const currentCity = nextProps.main.currentCenterMap;
-        // const allCities = nextProps.main.cities;
-
-        console.log(nextProps.main.currentCenterMap !== this.props.main.currentCenterMap)
-
-        return nextProps.main.currentCenterMap !== this.props.main.currentCenterMap
-    }
-
     componentDidMount() {
         const stateDetails = this.props.stateDetails;
         const getMain = this.props.getMain;
@@ -66,7 +57,7 @@ class SimpleMap extends Component {
             <div className="googleMap">
                 <GoogleMapReact
                     bootstrapURLKeys={{key}}
-                    defaultCenter={props.main.currentCenterMap}
+                    center={props.main.currentCenterMap}
                     defaultZoom={state.zoom}
                     onGoogleApiLoaded={this.initGeocoder}
                     yesIWantToUseGoogleMapApiInternals={true}
