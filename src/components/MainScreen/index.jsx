@@ -15,13 +15,11 @@ class MainScreen extends Component {
     }
 
     render() {
-        const dates = this.props.dates;
+        const { dates } = this.props;
         let addDetails = {
             isHover: false,
             isClick: false
         };
-
-        const { offer } = this.props;
 
         let newStateDates = dates.map(state => Object.assign(state, addDetails, {slug: `${state.companyAddress[0].city}-${state.companyName}-${state.offerName}`.split(' ').join('-').toLowerCase()}));
 
@@ -31,7 +29,7 @@ class MainScreen extends Component {
         return (
             <div>
                 <CityList />
-                <TechnoList />
+                <TechnoList tech={dates}/>
                 <OfferList />
             </div>
         );

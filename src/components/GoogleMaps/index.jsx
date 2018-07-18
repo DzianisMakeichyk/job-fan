@@ -16,8 +16,7 @@ class SimpleMap extends Component {
     };
 
     componentDidMount() {
-        const stateDetails = this.props.stateDetails;
-        const getMain = this.props.getMain;
+        const { stateDetails, getMain } = this.props;
 
         getMain();
         stateDetails();

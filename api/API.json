@@ -17,7 +17,7 @@
       "offerStatus": 29,
       "offerName": "Front-End Developer",
       "offerTags": [
-          "php", "reactJS", "VueJs", "SCSS"
+          "php", "reactJS", "VueJs", "scss"
       ],
       "offerDescription": "<p>100</p>",
       "offerSkills": [
@@ -46,7 +46,7 @@
       "offerStatus": 30,
       "offerName": "Front-End Developer",
       "offerTags": [
-        "php", "REDUX", "VUEX", "SCSS"
+        "php", "REDUX", "VUEX", "scss"
       ],
       "offerDescription": "<p>100</p>",
       "offerSkills": [
@@ -70,7 +70,7 @@
           "lng": 19.9681101
         }]
       }],
-      "technologies": ["html", "scss"],
+      "technologies": ["VueJs", "scss"],
       "currentCenterMap": {
         "lat": 52.2330649,
         "lng": 20.9207693

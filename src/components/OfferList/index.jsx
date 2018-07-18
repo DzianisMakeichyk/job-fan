@@ -2,23 +2,27 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import './style.css'
-import { getApi } from '../../actions';
+import { stateDetails } from '../../actions';
 import { Row } from 'antd';
 import Offer from '../Offer'
 
 class Board extends Component {
     componentDidMount() {
-        const { getApi } = this.props;
+        const { stateDetails } = this.props;
 
-        getApi();
+        stateDetails();
     }
 
     render() {
         const offers = this.props.dates;
 
+        console.log(this.props)
+
+        let offer = offers.map(offer => <Offer key={offer.slug} offer={offer} />);
+
         return (
             <Row>
-                {offers.map(offer => <Offer key={offer.slug} offer={offer} />)}
+                {offer}
             </Row>
         );
     }
@@ -29,7 +33,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({
-    getApi
+    stateDetails
 }, dispatch);
 
 
