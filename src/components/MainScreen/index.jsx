@@ -27,9 +27,6 @@ class MainScreen extends Component {
         store.dispatch(stateDetails(newStateDates));
         store.dispatch(stateByGuidelines(newStateDates));
 
-        console.log('main')
-        console.log(stateByGuidelines)
-
         return (
             <div>
                 <CityList />

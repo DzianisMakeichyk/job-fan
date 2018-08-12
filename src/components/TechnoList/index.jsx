@@ -20,7 +20,6 @@ class CityList extends Component {
         store.dispatch(stateDetails(currentTech));
         store.dispatch(stateByGuidelines(currentTech));
 
-        console.log(currentTech)
     };
 
     render() {

@@ -31,6 +31,9 @@ class Marker extends Component {
 
     render() {
         const { info } = this.props;
+
+        console.log(info)
+
         const divStyle = {
             border: '5px solid pink'
         };
@@ -38,18 +41,24 @@ class Marker extends Component {
             border: '5px solid blue'
         };
 
-        return (
+        if(typeof info !== 'undefined') {
+            return (
 
-            <div
-                className="SuperAwesomePin"
-                onClick={() => this.onClickMarker()}
-                onMouseEnter={() => this.onEnterMarker()}
-                onMouseLeave={() => this.onLeaveMarker()}
-                style={info.isHover ? divStyle : divStyle2}
-            >
+                <div
+                    className="SuperAwesomePin"
+                    onClick={() => this.onClickMarker()}
+                    onMouseEnter={() => this.onEnterMarker()}
+                    onMouseLeave={() => this.onLeaveMarker()}
+                    style={info.isHover ? divStyle : divStyle2}
+                >
 
-            </div>
-        );
+                </div>
+            );
+        } else {
+            return (
+                <div></div>
+            )
+        }
     }
 }
 

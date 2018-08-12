@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import GoogleMapReact from 'google-map-react';
-import { stateDetails, getMain } from '../../actions';
+import { getMain, stateByGuidelines } from '../../actions';
 import ApiKey from '../../keys/apiKeys';
 import Marker from './Marker'
 import './style.css'
@@ -12,21 +12,22 @@ class SimpleMap extends Component {
         coords: [],
         isMapLoad: false,
         zoom: 11
-
     };
 
     componentDidMount() {
-        const { stateDetails, getMain } = this.props;
+        const { stateByGuidelines, getMain } = this.props;
 
         getMain();
-        stateDetails();
+        stateByGuidelines();
     }
 
     initGeocoder = ({ maps }) => {
         const geocoder = new maps.Geocoder();
-        const dates = this.props.dates;
+        const { details } = this.props;
 
-        dates.map((index) => {
+        // console.log(details)
+
+        details.map((index) => {
             const city = index.companyAddress[0].city;
             const address = index.companyAddress[1].address;
 
@@ -48,43 +49,55 @@ class SimpleMap extends Component {
     };
 
     render() {
-        const props = this.props;
-        const state = this.state;
+        const { main, details } = this.props;
+        const { zoom, coords } = this.state;
         const key = ApiKey.GoogleMapApiKey;
 
-        return (
-            <div className="googleMap">
-                <GoogleMapReact
-                    bootstrapURLKeys={{key}}
-                    center={props.main.currentCenterMap}
-                    defaultZoom={state.zoom}
-                    onGoogleApiLoaded={this.initGeocoder}
-                    yesIWantToUseGoogleMapApiInternals={true}
-                >
-                    {state.coords.map((marker, i) => {
-                        return (
-                            <Marker
-                                key={i}
-                                lat={marker.lat}
-                                lng={marker.lng}
-                                info={props.dates[i]}
-                            />
-                        )
-                    })
-                }
-                </GoogleMapReact>
-            </div>
-        );
+        // console.log(details)
+
+
+        if(details) {
+            return (
+                <div className="googleMap">
+                    <GoogleMapReact
+                        bootstrapURLKeys={{key}}
+                        center={main.currentCenterMap}
+                        defaultZoom={zoom}
+                        onGoogleApiLoaded={this.initGeocoder}
+                        yesIWantToUseGoogleMapApiInternals={true}
+                    >
+                        {coords.map((marker, i) => {
+                            return (
+                                <Marker
+                                    key={i}
+                                    lat={marker.lat}
+                                    lng={marker.lng}
+                                    info={details[i]}
+                                />
+                            )
+                        })
+                        }
+                    </GoogleMapReact>
+                </div>
+            );
+        } else {
+            return (
+                <h1>
+                    Loading...
+                </h1>
+            )
+        }
+
     }
 }
 
 const mapStateToProps = (state) => ({
-    dates: state.dates.dates,
-    main: state.dates.mainInfo
+    main: state.dates.mainInfo,
+    details: state.dates.guidelineDetails,
 });
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({
-    stateDetails,
+    stateByGuidelines,
     getMain
 }, dispatch);
 

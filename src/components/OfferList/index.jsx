@@ -16,9 +16,6 @@ class Board extends Component {
     render() {
         const { details } = this.props;
 
-        console.log('Details');
-        console.log(this.props);
-
         if(typeof details !== 'undefined') {
             let offer = details.map(offer => <Offer key={offer.slug} offer={offer} />);
 
