@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { stateDetails, getMain } from '../../actions';
+import { stateDetails, getMain, stateByGuidelines } from '../../actions';
 import { Row, Col, Button } from 'antd';
 import store from '../../store'
 
@@ -18,6 +18,9 @@ class CityList extends Component {
         let currentTech = getCurrentDates.filter(tech => tech.offerTags.map(index => index === current).includes(true));
 
         store.dispatch(stateDetails(currentTech));
+        store.dispatch(stateByGuidelines(currentTech));
+
+        console.log(currentTech)
     };
 
     render() {
@@ -53,6 +56,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({
     stateDetails,
+    stateByGuidelines,
     getMain
 }, dispatch);
 

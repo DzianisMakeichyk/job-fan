@@ -1,9 +1,10 @@
-import { GET_API, GET_DETAILS, STATE_DETAILS, GET_MAIN } from '../actions'
+import { GET_API, GET_DETAILS, STATE_DETAILS, GET_MAIN, GUIDELINES } from '../actions'
 
 const initialState = {
     dates: [],
     details: [],
     stateDetails: [],
+    guidelineDetails: [],
     mainInfo: []
 };
 
@@ -24,7 +25,12 @@ export default function (state = initialState, action) {
         case STATE_DETAILS:
             return {
                 ...state,
-                stateDates: data
+                stateDetails: data
+            };
+        case GUIDELINES:
+            return {
+                ...state,
+                guidelineDetails: data
             };
         case GET_MAIN:
             return {

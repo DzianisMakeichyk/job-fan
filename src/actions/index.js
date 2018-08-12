@@ -2,6 +2,7 @@ export const GET_API = 'GET_API';
 export const GET_DETAILS = 'GET_DETAILS';
 export const STATE_DETAILS = 'STATE_DETAILS';
 export const GET_MAIN = 'GET_MAIN';
+export const GUIDELINES = 'GUIDELINES';
 
 export function getApi() {
     return async function (dispatch) {
@@ -26,13 +27,25 @@ export function getDetails(slug) {
         });
     }
 }
-
+// e.t. Hover
 export function stateDetails(stateDetails) {
     return async function (dispatch) {
-        const details = await stateDetails;
+        const detailsUpdated = await stateDetails;
+
         return dispatch({
             type: 'STATE_DETAILS',
-            data: details,
+            data: detailsUpdated,
+        });
+    }
+}
+// Guideline
+export function stateByGuidelines(stateDetails) {
+    return async function (dispatch) {
+        const detailsUpdated = await stateDetails;
+
+        return dispatch({
+            type: 'GUIDELINES',
+            data: detailsUpdated,
         });
     }
 }

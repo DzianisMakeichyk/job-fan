@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { getApi, stateDetails } from '../../actions';
+import { getApi, stateDetails, stateByGuidelines } from '../../actions';
 import OfferList from '../OfferList'
 import CityList from '../CityList'
 import TechnoList from '../TechnoList'
@@ -25,6 +25,10 @@ class MainScreen extends Component {
 
         //Dispatch
         store.dispatch(stateDetails(newStateDates));
+        store.dispatch(stateByGuidelines(newStateDates));
+
+        console.log('main')
+        console.log(stateByGuidelines)
 
         return (
             <div>
@@ -42,7 +46,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({
     getApi,
-    stateDetails
+    stateDetails,
+    stateByGuidelines
 }, dispatch);
 
 

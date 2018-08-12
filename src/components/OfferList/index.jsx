@@ -2,38 +2,48 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import './style.css'
-import { stateDetails } from '../../actions';
+import { stateByGuidelines } from '../../actions';
 import { Row } from 'antd';
 import Offer from '../Offer'
 
 class Board extends Component {
     componentDidMount() {
-        const { stateDetails } = this.props;
+        const { stateByGuidelines } = this.props;
 
-        stateDetails();
+        stateByGuidelines();
     }
 
     render() {
-        const offers = this.props.dates;
+        const { details } = this.props;
 
-        console.log(this.props)
+        console.log('Details');
+        console.log(this.props);
 
-        let offer = offers.map(offer => <Offer key={offer.slug} offer={offer} />);
+        if(typeof details !== 'undefined') {
+            let offer = details.map(offer => <Offer key={offer.slug} offer={offer} />);
 
-        return (
-            <Row>
-                {offer}
-            </Row>
-        );
+            return (
+                <Row>
+                    {offer}
+                </Row>
+            );
+        } else {
+            return (
+                <h1>
+                    Loading...
+                </h1>
+            )
+        }
     }
 }
 
 const mapStateToProps = (state) => ({
     dates: state.dates.dates,
+    details: state.dates.guidelineDetails,
 });
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({
-    stateDetails
+    stateByGuidelines
 }, dispatch);
 
 
